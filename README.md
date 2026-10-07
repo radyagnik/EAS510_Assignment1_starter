@@ -87,3 +87,4 @@ restart never touches GitHub.
 Apache 2.0. See `LICENSE`.
 ## My notes
 Student: radyagnik. Work in progress for Project 1.
+Setup complete: git identity configured.
