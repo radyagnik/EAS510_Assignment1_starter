@@ -85,3 +85,5 @@ restart never touches GitHub.
 ## License
 
 Apache 2.0. See `LICENSE`.
+## My notes
+Student: radyagnik. Work in progress for Project 1.
