@@ -88,3 +88,13 @@ Apache 2.0. See `LICENSE`.
 ## My notes
 Student: radyagnik. Work in progress for Project 1.
 Setup complete: git identity configured.
+
+## Observed weakness in V1: what failed and why
+the crop combinations of v1 and 2 matched 0 out of 10 images each and crops matched only 5 out fo 30 overall 
+like original_09__crop_keep60__bright__compress__q40__v2.jpg scored 16 cropig probably also effects how the template is aligned with the image so it makes rules 1-3 less effective 
+## Design decision for V2: what Rule 4 is and why you chose it
+rule 4 finds distinctive featues in the image and checks that they line up consistently, which works een when the image is cropped. rules 1-3 did poorly so rule 4: 40 of the 100 points and cut rules 1-3 to 15, 15 and 30  
+## Effect of the change: accuracy before/after on easy vs hard
+accuracy improved from 31 out of 60 to 50 off 60 on the easy set. on tje hard set it improved form 29 to 56 out of 60 so the hard test improved more. the highest random score dropped from 48 to 31 with no worng matches 
+## Trade-offs: what new costs or risks did Rule 4 introduce
+one limitation is that the image can still fail to match even rule 4 detects similar features like ..._q40__v2 scored 32 out of 100 becaue only rule 4 contributed, since matching cutoff is 50 the image was not matched, also the modified_00_crop_25pct.jpg scored only 0.13 under rule 4, shows that feature matching can also fail when too much of the original img is removed (so it cannot gurantee that every crop will be recognized) 
